@@ -1,0 +1,34 @@
+import jax 
+import jax.numpy as jnp
+
+
+def construct():
+    x_cord = jnp.linspace(0, 1, 1000)
+    y_cord = jnp.linspace(0, 1, 1000)
+
+    xz, yz = jnp.meshgrid(x_cord, y_cord)
+    cords = jnp.stack([xz, yz], axis = -1)
+
+    def sphere():
+        u = x_cord * (2*jnp.pi)
+        v = y_cord * jnp.pi
+
+        x = jnp.sin(v) * jnp.cos(u)
+        y = jnp.sin(v) * jnp.sin(u)
+        z = jnp.cos(v)
+
+        shape = (x, y, z)
+        return shape
+
+    def cylinder():
+        u = (2 * jnp.pi) * x_cord
+        v = jnp.pi * y_cord
+
+        x = jnp.cos(u)
+        y = jnp.sin(u)
+        z = v
+
+        shape = (x, y, z)
+        return shape
+
+    def 
