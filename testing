@@ -1,0 +1,32 @@
+import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D # Required for older matplotlib
+import construction as cnst
+
+# 1. Grab your data
+sphere_pts, cylinder_pts, cone_pts = cnst.construct()
+
+# 2. Setup the plot
+fig = plt.figure(figsize=(15, 5))
+
+# Subplot 1: The Sphere
+ax1 = fig.add_subplot(131, projection='3d')
+ax1.plot_surface(*sphere_pts, cmap='magma', rcount=100, ccount=100)
+ax1.set_title("Sphere")
+
+# Subplot 2: The Cylinder
+ax2 = fig.add_subplot(132, projection='3d')
+ax2.plot_surface(*cylinder_pts, cmap='viridis', rcount=100, ccount=100)
+ax2.set_title("Cylinder")
+
+# Subplot 3: The Cone
+ax3 = fig.add_subplot(133, projection='3d')
+ax3.plot_surface(*cone_pts, cmap='plasma', rcount=100, ccount=100)
+ax3.set_title("Cone")
+
+# Make everything look proportional
+for ax in [ax1, ax2, ax3]:
+    ax.set_aspect('equal')
+
+plt.tight_layout()
+plt.show()
+

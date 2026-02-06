@@ -9,10 +9,10 @@ def construct():
     xz, yz = jnp.meshgrid(x_cord, y_cord)
     cords = jnp.stack([xz, yz], axis = -1)
 
-    def sphere():
-        u = x_cord * (2*jnp.pi)
-        v = y_cord * jnp.pi
+    u = (2 * jnp.pi) * xz
+    v = jnp.pi * yz
 
+    def sphere():
         x = jnp.sin(v) * jnp.cos(u)
         y = jnp.sin(v) * jnp.sin(u)
         z = jnp.cos(v)
@@ -21,9 +21,6 @@ def construct():
         return shape
 
     def cylinder():
-        u = (2 * jnp.pi) * x_cord
-        v = jnp.pi * y_cord
-
         x = jnp.cos(u)
         y = jnp.sin(u)
         z = v
@@ -31,4 +28,12 @@ def construct():
         shape = (x, y, z)
         return shape
 
-    def 
+    def cone():
+        x = v * jnp.cos(u)
+        y = v * jnp.sin(u)
+        z = v
+
+        shape (x, y, z)
+        return shape
+
+    return sphere(), cylinder(), cone()
