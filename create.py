@@ -3,11 +3,10 @@ import jax.numpy as jnp
 
 
 def construct():
-    x_cord = jnp.linspace(0, 1, 1000)
-    y_cord = jnp.linspace(0, 1, 1000)
+    x_cord = jnp.linspace(0, 1, 100)
+    y_cord = jnp.linspace(0, 1, 100)
 
     xz, yz = jnp.meshgrid(x_cord, y_cord)
-    cords = jnp.stack([xz, yz], axis = -1)
 
     u = (2 * jnp.pi) * xz
     v = jnp.pi * yz
@@ -37,3 +36,9 @@ def construct():
         return shape
 
     return sphere(), cylinder(), cone()
+
+
+
+
+
+
