@@ -33,7 +33,7 @@ def construct():
         y = v * jnp.sin(u)
         z = v
 
-        shape (x, y, z)
+        shape = (x, y, z)
         return shape
 
     return sphere(), cylinder(), cone()
