@@ -8,9 +8,9 @@ import jax.numpy as jnp
 def stretch(state, xmult, ymult, zmult):
 
     x, y, z = state
-    xc *= xmult
-    yc *= ymult
-    zc *= zmult
+    x *= xmult
+    y *= ymult
+    z *= zmult
 
-    shape = (xc, yc, zc)
+    shape = (x, y, z)
     return shape

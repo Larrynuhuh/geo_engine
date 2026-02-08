@@ -1,7 +1,9 @@
 import trimesh
 import numpy as np
-import birth as ct
+from birth import *
+from transfiguration import *
 
+'''
 # 1. Get your JAX data
 _, _, (cx, cy, cz) = ct.construct()
 faces_jax = ct.transplant()
@@ -14,4 +16,6 @@ cylinder_mesh = trimesh.Trimesh(
 )
 
 # 3. Export and drop into 3DViewer.net
-cylinder_mesh.export('cone.obj')
+cylinder_mesh.export('sphere.obj')'''
+
+ball = birth.sphere()
