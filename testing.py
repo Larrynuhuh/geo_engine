@@ -1,9 +1,9 @@
 import trimesh
 import numpy as np
-import create as ct
+import birth as ct
 
 # 1. Get your JAX data
-_, (cx, cy, cz), _ = ct.construct()
+_, _, (cx, cy, cz) = ct.construct()
 faces_jax = ct.transplant()
 
 # 2. Bundle them up just like you did for the sphere
@@ -14,5 +14,4 @@ cylinder_mesh = trimesh.Trimesh(
 )
 
 # 3. Export and drop into 3DViewer.net
-cylinder_mesh.fill_holes()
-cylinder_mesh.export('my_cylinder.obj')
+cylinder_mesh.export('cone.obj')
