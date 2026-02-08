@@ -5,3 +5,12 @@
 import jax 
 import jax.numpy as jnp
 
+def stretch(state, xmult, ymult, zmult):
+
+    x, y, z = state
+    xc *= xmult
+    yc *= ymult
+    zc *= zmult
+
+    shape = (xc, yc, zc)
+    return shape
